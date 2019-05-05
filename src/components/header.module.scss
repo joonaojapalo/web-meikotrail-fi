@@ -1,0 +1,48 @@
+.Header {
+  background: tomato;
+  margin-bottom: 1.45rem;
+}
+
+.box  {
+	border-radius: 4px;
+}
+
+@media(max-width: 786px) {
+	section {
+		width: 820px;
+		margin-bottom: 20px;
+	}
+
+	.box {
+		padding: 0;
+		box-shadow: 0;
+	}
+}
+
+@media(min-width: 786px) {
+	section {
+		width: 832px;
+	}
+
+	.box {
+		padding: 6px;
+		box-shadow: 0 10px 10px 4px #111;
+		background: #ddd;
+
+		&-left {
+			transform: rotate(-2deg);
+			margin: 20px 0 20px 0;
+			transition: transform 0.3s ease-in-out;
+		}
+
+		&-right {
+			transform: rotate(2deg);
+			margin: 20px 0 20px 0;
+			transition: transform 0.3s ease-in-out;
+		}
+	}
+}
+
+img.responsive {
+	max-width: 100%;
+}
