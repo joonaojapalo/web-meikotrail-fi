@@ -2,12 +2,16 @@ html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  min-height: 100%;
 }
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(to bottom, #fff 1%, #cfa 100%);
 }
+
 article,
 aside,
 details,
@@ -230,7 +234,6 @@ h1 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  text-decoration: underline;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
@@ -620,4 +623,50 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+
+/** Sporzz additional */
+.box  {
+  border-radius: 4px;
+}
+
+@media(max-width: 786px) {
+  section {
+    width: 820px;
+    margin-bottom: 20px;
+  }
+
+  .box {
+    padding: 0;
+    box-shadow: 0;
+  }
+}
+
+@media(min-width: 786px) {
+  section {
+    width: 832px;
+  }
+
+  .box {
+    padding: 6px;
+    box-shadow: 0 10px 10px 4px #111;
+    background: #ddd;
+  }
+
+  .box-left {
+    transform: rotate(-2deg);
+    margin: 20px 0 20px 0;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .box-right {
+    transform: rotate(2deg);
+    margin: 20px 0 20px 0;
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+img.responsive {
+  max-width: 100%;
 }

@@ -1,21 +1,36 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react'
+import { Link, graphql } from 'gatsby'
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Layout from '../components/layout'
+import Image from '../components/image'
+import SEO from '../components/seo'
+import Hero from '../components/hero'
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+    <Hero/>
+    <div class="row">
+      <div class="col-sm-12">
+        <section>
+          <h1>Hola polkujuoksun ystävä!</h1>
+        </section>
+      </div>
     </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <Link to="/blog/kilpailuohjeet">blog/kilpailuohjeet</Link>
   </Layout>
 )
 
 export default IndexPage
+
+export const pageQuery = graphql`
+  query NavigationQuery {
+    contentfulNavigation(name: { eq: "Main menu" }) {
+      name
+      pages {
+        id
+        title
+      }
+    }
+  }
+`
