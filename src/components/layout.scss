@@ -1,3 +1,7 @@
+@import '../style/variables.scss';
+@import '../style/palette.scss';
+@import '../style/typography.scss';
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -6,50 +10,22 @@ html {
 }
 
 body {
+  background: linear-gradient(to bottom, #eee 1%, #eee 100%);
   margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(to bottom, #fff 1%, #cfa 100%);
+  padding: 0;
 }
 
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-main,
-menu,
-nav,
-section,
-summary {
-  display: block;
-}
-audio,
-canvas,
-progress,
-video {
-  display: inline-block;
-}
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
-progress {
-  vertical-align: baseline;
-}
-[hidden],
-template {
-  display: none;
-}
 a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
+  color: $color-action;
+  text-decoration: none;
 }
 a:active,
 a:hover {
   outline-width: 0;
+  color: $color-action-dark;
+  transition: transform 0.3s ease-in-out;  
 }
 abbr[title] {
   border-bottom: none;
@@ -189,7 +165,7 @@ textarea {
   font: inherit;
 }
 html {
-  font: 112.5%/1.45em georgia, serif;
+  font: 112.5%/1.45em $body-font-family;
   box-sizing: border-box;
   overflow-y: scroll;
 }
@@ -202,9 +178,11 @@ html {
 *:after {
   box-sizing: inherit;
 }
+
+
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
+  font-family: $body-font-family;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -212,119 +190,6 @@ body {
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
-}
-img {
-  max-width: 100%;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-}
-h1 {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-  color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
-  text-rendering: optimizeLegibility;
-  font-size: 2.25rem;
-  line-height: 1.1;
-}
-h2 {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-  color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
-  text-rendering: optimizeLegibility;
-  font-size: 1.62671rem;
-  line-height: 1.1;
-}
-h3 {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-  color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
-  text-rendering: optimizeLegibility;
-  font-size: 1.38316rem;
-  line-height: 1.1;
-}
-h4 {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-  color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
-  text-rendering: optimizeLegibility;
-  font-size: 1rem;
-  line-height: 1.1;
-}
-h5 {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-  color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
-  text-rendering: optimizeLegibility;
-  font-size: 0.85028rem;
-  line-height: 1.1;
-}
-h6 {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-  color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
-  text-rendering: optimizeLegibility;
-  font-size: 0.78405rem;
-  line-height: 1.1;
 }
 hgroup {
   margin-left: 0;
@@ -628,30 +493,66 @@ pre tt:after {
 
 /** Sporzz additional */
 .box  {
-  border-radius: 4px;
+  border-radius: $border-radius;
 }
 
-@media(max-width: 786px) {
+.layout {
+  margin: 0 auto;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media(min-width: $breakpoint-sm) {
+ .layout {
+   width: $width-layout;
+ }
+}
+
+@media(max-width: $breakpoint-sm) {
+ .layout {
+   width: 100%;
+ }
+}
+
+.embed-16-9 {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+
+  iframe {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+  }
+}
+
+@media(max-width: $breakpoint-sm) {
   section {
-    width: 820px;
     margin-bottom: 20px;
+    width: 100%;
   }
 
   .box {
     padding: 0;
-    box-shadow: 0;
+    box-shadow: none;
   }
 }
 
-@media(min-width: 786px) {
-  section {
-    width: 832px;
+@media(min-width: $breakpoint-sm) {
+  section{
+    width: 820px;
+    margin: 0 auto;
   }
 
   .box {
     padding: 6px;
-    box-shadow: 0 10px 10px 4px #111;
-    background: #ddd;
+    box-shadow: 0 4px 4px 0 rgba(1,1,1,0.35);
+    background: #fff;
   }
 
   .box-left {
@@ -669,4 +570,35 @@ pre tt:after {
 
 img.responsive {
   max-width: 100%;
+}
+
+.btn {
+    padding: 10px;
+    min-width: 64px;
+    min-height: 64px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    border-radius: $border-radius;
+}
+
+.btn-link {
+    appearance: none;
+    background-color: transparent;
+    border: 0;
+    color: $color-action;
+    cursor: pointer;
+    display: inline;
+    font-size: inherit;
+    padding: 0;
+    user-select: none;
+    white-space: nowrap;
+
+    border: 2px solid $color-action;
+}
+
+svg.action {
+  path {
+    fill: $color-action;
+  }
 }

@@ -1,0 +1,61 @@
+@import '../style/variables.scss';
+@import '../style/palette.scss';
+@import '../style/typography.scss';
+
+$menu-open-time: 0.2s;
+$margin: 1.45rem;
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.Navigation {
+  list-style: none;
+  display: flex;
+  padding: 10px;
+  border-radius: $border-radius;
+  margin: 5px 0;
+
+  @media(min-width: $breakpoint-sm) {
+    flex-direction: row;
+  }
+
+  @media(max-width: $breakpoint-sm) {
+    flex-direction: column;
+    min-width: 80vw;
+    position: absolute;
+    z-index: 2;
+    animation: fade-in $menu-open-time ease-in-out;
+    background: white;
+  }
+
+  li {
+    padding-right: 20px;
+    line-height: 24px;
+    font-size: $size-text-nav;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+
+.Closed {
+  @media(max-width: $breakpoint-sm) {
+    display: none;
+  }
+}
+
+.Toggle {
+  @media(min-width: $breakpoint-sm) {
+    display: none;
+  }
+
+  @media(max-width: $breakpoint-sm) {
+    display: block;
+  }
+}

@@ -1,43 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
+import { ContainerFluid, Row, Col12 } from '../components/grid';
 
-import 'flexboxgrid-sass';
 import './layout.scss';
-import Header from './header';
 
 const Layout = ({ children }) => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `
-  )
-
   return (
-    <>
-      <Header siteTitle={site.siteMetadata.title} />
-      <div style={{
-        maxWidth: 960,
-        margin: '0 auto'
-      }}>
-        <div className="row">
-          <div className="col-xs-12">
-            <main>{children}</main>
-            <footer>
+    <div className="layout">
+      {children}
+      <ContainerFluid>
+        <Row>
+          <Col12>
+            <footer style={{textAlign: "center", margin: 20}}>
               © {new Date().getFullYear()} Sporzz
             </footer>
-          </div>
-        </div>
-      </div>
-    </>
+          </Col12>
+        </Row>
+      </ContainerFluid>
+    </div>
   )
 }
 
