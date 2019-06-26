@@ -7,6 +7,7 @@ import SEO from '../components/seo';
 import Hero from '../components/hero';
 import Header from '../components/header';
 import {Row, Col12, Col8, Col4} from '../components/grid';
+import Paragraph from '../components/paragraph';
 
 const Video = ({src}) => (
   <div className="box box-left">
@@ -22,7 +23,6 @@ const Video = ({src}) => (
   </div>
 );
 
-
 const IndexPage = ({ data }) => (
   <Layout>
     <Header siteTitle="Etusivu">
@@ -32,18 +32,23 @@ const IndexPage = ({ data }) => (
     <div className="container-fluid">
       <Row>
         <Col12>
-          <h1>Hola polkujuoksun ystävä!</h1>
+          <Paragraph>
+            <h1>Hola polkujuoksun ystävä!</h1>
+          </Paragraph>
         </Col12>
       </Row>
       <Row>
         <Col8>
-          Foo
+          <Paragraph>
+            Foo
+          </Paragraph>
         </Col8>
         <Col4>
-          Bar
+          <Paragraph>
+            Bar
+          </Paragraph>
         </Col4>
       </Row>
-
       <Row>
         <Col12>
           <section>

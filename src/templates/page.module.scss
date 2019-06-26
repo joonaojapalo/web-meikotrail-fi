@@ -1,0 +1,13 @@
+@import '../style/palette.scss';
+
+.h1 {
+	display: inline-block;
+	background: $color-white-opaque;
+	padding: 20px;
+}
+
+.Text {
+	background: $color-white-opaque;
+	padding: 10px;
+	margin-bottom: 1rem;
+}
