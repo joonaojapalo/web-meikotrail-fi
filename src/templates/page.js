@@ -11,6 +11,10 @@ import Paragraph from '../components/paragraph';
 import styles from './page.module.scss';
 
 const BlockItem = ({item}) => {
+  if (!item) {
+    return null;
+  }
+
   const layoutBlock = item.layout_block[0];
   return (
     <Col4 key={item.id}>
@@ -20,14 +24,14 @@ const BlockItem = ({item}) => {
   )
 };
 
-const Block = ({block}) => (
+const Block = ({block}) => block && (
   <Row key={block.id}>
     {block.items && block.items.map(item => <BlockItem item={item}/>)}
     <pre>{JSON.stringify(block)}</pre>
   </Row>
 );
 
-const PageLayout = ({layout}) => (
+const PageLayout = ({layout}) => layout && (
   <>
     {layout.blocks && layout.blocks.map(block => <Block block={block}/>)}
   </>
